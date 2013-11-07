@@ -1,0 +1,15 @@
+-main Test
+-cp src/main/haxe
+-cp src/test/haxe
+-lib stax
+-lib muster
+-lib quiver
+
+-lib tink
+-D haxe3
+#-D debug
+-D pattern_matching
+-resource log.cnf@log
+-neko test/test.n
+
+--connect 2331
