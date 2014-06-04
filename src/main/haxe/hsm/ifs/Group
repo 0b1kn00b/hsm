@@ -1,6 +1,7 @@
 package hsm.ifs;
 
-import hx.Reactor;
+import tink.core.Signal;
+
 import Hsm;
 
 //Tuple4<Identifier,Ref<Array<Segment<T>>>,Cursor,Reactive<Signal<T>>>;
@@ -14,5 +15,5 @@ interface Group<T> extends StateHandler<T>{
   private var cursor(default,null):Cursor;
 
   public function segments():Array<Segment<T>>;
-  public function reactor():Reactor<Signal<T>>;
+  public function reactor():Reactor<SignalTrigger<T>>;
 }

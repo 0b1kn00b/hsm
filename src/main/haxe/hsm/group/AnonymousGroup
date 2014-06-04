@@ -1,0 +1,25 @@
+package hsm.group;
+
+
+class AnonymousGroup<T> implements IGroup<T>{
+  
+  public function new(){}
+  public function onEnter():Void{
+    this._onEnter();
+  }
+  private dynamic function _onEnter():Void{
+
+  }
+  public function onUpdate(v:T):Void{
+    this._onUpdate(v);
+  }
+  private dynamic function _onUpdate(v:T):Void{
+
+  }
+  public function onLeave():Void{
+
+  }
+  private dynamic function _onLeave():Void{
+    this._onLeave(); 
+  }
+}

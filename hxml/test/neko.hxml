@@ -1,9 +1,13 @@
 -main Test
 -cp src/main/haxe
 -cp src/test/haxe
--lib stax
--lib muster
--lib quiver
+
+
+-lib stx_logger
+-lib utest
+-lib tink_core
+-lib pointwise
+-lib addendum
 
 -lib tink
 -D haxe3

@@ -1,37 +1,34 @@
-using stx.UnitTest;
 
-import stx.UnitTest;
+import utest.Runner;
+import utest.ui.Report;
 
-import stx.Log.*;
-
-using stx.ds.Zipper;
-using stx.Option;
-using stx.Prelude;
+using stx.Options;
 using stx.Arrays;
 using stx.Tuples;
 using stx.Functions;
 using stx.Compose;
-using stx.Arrow;
 
-import stx.Prelude;
-
-import kwv.Locator;
 using Hsm;
 
 class Test{
 	static function main(){
-		Stax.init();
-		var runner = UnitTest.rig();
-
-		var tests : Array<TestCase> =
+		trace('entry point');
+		var runner = new Runner();
+		var rpr = Report.create(runner);
+		
+		var tests : Array<Dynamic> =
 		[
-			new hsm.HsmClassTest(),
+			new hsm.HsmTest(),
 			/*
-				new hsm.HsmTest(),
+				
 			*/
 		];
-
-		runner.append(tests).run();
+		tests.each(
+			function(x){
+				runner.addCase(x);
+			}
+		);
 		
+		runner.run();
 	}
 }
